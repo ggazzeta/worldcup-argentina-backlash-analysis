@@ -144,17 +144,6 @@
   }
   .hover-target:hover{cursor:pointer; opacity:.85;}
 
-  /* claim cards */
-  .claim-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border);
-    border:1px solid var(--border); margin:24px 0; font-family:var(--sans);}
-  .claim-cell{background:var(--surface); padding:20px 22px;}
-  .claim-cell.thread{border-left:3px solid var(--muted);}
-  .claim-cell.record{border-left:3px solid var(--accent);}
-  .claim-cell .tag{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:8px;}
-  .claim-cell.record .tag{color:var(--accent);}
-  .claim-cell p{font-family:var(--serif); font-size:15px; margin-bottom:10px;}
-  .claim-cell p:last-child{margin-bottom:0;}
-  @media (max-width:720px){.claim-grid{grid-template-columns:1fr;}}
 
   /* ledger table */
   .ledger{width:100%; border-collapse:collapse; font-family:var(--sans); font-size:13.5px; margin:24px 0;}
@@ -191,8 +180,8 @@
 <header class="hero">
   <div class="inner">
     <p class="eyebrow">Data review · Argentina, World Cup 2026</p>
-    <h1>The villain edit, checked against the record</h1>
-    <p class="dek">A viral thread called the turn against Messi and Argentina a manufactured propaganda operation. Here's what the matches, referees, polls, and fact-checks actually show.</p>
+    <h1>Argentina's villain arc, checked against the record</h1>
+    <p class="dek">Messi and Argentina went from beloved champions to the tournament's villains within a month. Here's what the matches, referees, polls, and officiating data actually show about why.</p>
     <p class="byline">Independent analysis · sourced throughout · last updated <b>24 July 2026</b></p>
   </div>
 </header>
@@ -200,7 +189,7 @@
 <div class="wrap">
 
 <section id="intro">
-  <p class="lede">Spain beat defending champions Argentina 1–0 in extra time to win the 2026 World Cup on July 19. Days later, a widely shared thread argued that Messi's shift from "beloved champion" to "villain" was mostly manufactured: algorithm-driven clips, repetition effects, maybe a paid campaign, with almost nothing on the pitch actually changing. That's a testable claim. This piece tests it, using match data, FIFA's own officiating numbers, a real public-opinion poll, and the fact-checks published during the tournament, not the "illustrative, not measured" chart the thread used to make its case.</p>
+  <p class="lede">Spain beat defending champions Argentina 1–0 in extra time to win the 2026 World Cup on July 19. In the space of a month, Messi's public image flipped from "beloved champion" to "villain." One popular explanation is that almost nothing on the pitch actually changed, and social media did the rest: algorithm-driven clips, repetition effects, narrative running ahead of fact. That's a testable claim. This piece tests it, using match data, FIFA's own officiating numbers, a public-opinion poll tracked across the tournament, and match-by-match records.</p>
 
   <div class="kpi-row">
     <div class="kpi">
@@ -229,7 +218,7 @@
 <section id="timeline">
   <p class="section-kicker">Part 1</p>
   <h2>What actually happened, match by match</h2>
-  <p>The thread claims almost nothing on the pitch changed between 2022 and 2026. Here's every Argentina match this tournament, with the incidents that made real news, not retrospective vibes.</p>
+  <p>One popular explanation says almost nothing on the pitch changed between 2022 and 2026. Here's every Argentina match this tournament, with the incidents that made real news, not retrospective vibes.</p>
 
   <div class="timeline">
     <div class="tl-item">
@@ -294,15 +283,15 @@
   </div>
 
   <div class="callout">
-    <div class="k">Reading this timeline against the thread</div>
-    <p>Four of Argentina's six knockout-round moments produced real, contemporaneous controversy: an official FIFA complaint, a head coach's on-record complaint, a UK government statement, and a public racism accusation with a public rebuttal. That's a different picture from "almost nothing changed and the algorithm did the rest." This tournament produced an unusually dense run of disputed decisions and off-pitch flashpoints involving Argentina directly, in a way 2022 largely didn't.</p>
+    <div class="k">What the timeline actually shows</div>
+    <p>Four of Argentina's six knockout-round moments produced real, contemporaneous controversy: an official FIFA complaint, a head coach's on-record complaint, a UK government statement, and a public racism accusation with a public rebuttal. That's a different picture from a quiet tournament where only the online reaction changed. This tournament produced an unusually dense run of disputed decisions and off-pitch flashpoints involving Argentina directly, in a way 2022 largely didn't.</p>
   </div>
 </section>
 
 <section id="sentiment">
   <p class="section-kicker">Part 2</p>
-  <h2>The sentiment data the thread didn't use</h2>
-  <p>The thread's own "public mood on Messi" chart carries a footnote noting it's illustrative, not measured sentiment data. A real, sampled measurement exists: <a href="https://yougov.com/en-gb/articles/55220-lionel-messi-seen-more-negatively-following-2026-world-cup" target="_blank" rel="noopener">YouGov polled British adults</a> three times: before the tournament, during the Round of 16, and again after the final. That's an actual trajectory, not one before/after snapshot, and it doesn't move in a smooth line.</p>
+  <h2>The sentiment data</h2>
+  <p>A real, sampled measurement exists: <a href="https://yougov.com/en-gb/articles/55220-lionel-messi-seen-more-negatively-following-2026-world-cup" target="_blank" rel="noopener">YouGov polled British adults</a> three times: before the tournament, during the Round of 16, and again after the final. That's an actual trajectory, not a single before/after snapshot, and it doesn't move in a smooth line.</p>
 
   <div class="chart-card">
     <div class="chart-title">Messi net favorability, three measured points</div>
@@ -311,7 +300,7 @@
     <div class="chart-source">Source: YouGov. Waves fielded pre-tournament, during the Round of 16, and post-final (published 22 Jul 2026).</div>
   </div>
 
-  <p>The real shape isn't the thread's smooth glide from adoration to villain. Net favorability held its pre-tournament level through the group stage and Cape Verde, then took its first real hit right at the Round of 16, the Egypt match that produced Egypt's own formal bias complaint to FIFA, dropping from +46 to +39. That's where the shift actually starts, not a gradual drift from day one. It then kept falling, another 54 points over the next twelve days: the same stretch that held the Embolo red card and Yakin's complaint, the Falklands banner, and the final's scuffle, back-turning, and racism accusation. The drop tracks specific, dated events beginning with Egypt, not a slow algorithmic bleed.</p>
+  <p>The real shape isn't a smooth glide from adoration to villain. Net favorability held its pre-tournament level through the group stage and Cape Verde, then took its first real hit right at the Round of 16, the Egypt match that produced Egypt's own formal bias complaint to FIFA, dropping from +46 to +39. That's where the shift actually starts, not a gradual drift from day one. It then kept falling, another 54 points over the next twelve days: the same stretch that held the Embolo red card and Yakin's complaint, the Falklands banner, and the final's scuffle, back-turning, and racism accusation. The drop tracks specific, dated events beginning with Egypt, not a slow algorithmic bleed.</p>
 
   <p>Messi wasn't the only reputation this tournament moved:</p>
 
@@ -337,7 +326,7 @@
     <div class="chart-source">Source: Brennan Klein, Northeastern NetSI Sport (news.northeastern.edu, Jul 11 2026).</div>
   </div>
 
-  <p>Argentina really was the second-most-favored team by this measure, so that part of the "favoritism" perception isn't invented. But it needs a caveat the thread never applies in reverse: the metric counts intervention frequency, not correctness. Klein was explicit about the limit. "They are topping this list because the referees missed fouls that VAR thought should have been fouls," he told reporters, calling any leap from that to "bias" a "hop, step and a jump away" from what the numbers actually show.</p>
+  <p>Argentina really was the second-most-favored team by this measure, so that part of the "favoritism" perception isn't invented. But it needs a caveat that's easy to skip: the metric counts intervention frequency, not correctness. Klein was explicit about the limit. "They are topping this list because the referees missed fouls that VAR thought should have been fouls," he told reporters, calling any leap from that to "bias" a "hop, step and a jump away" from what the numbers actually show.</p>
 
   <p>That distinction matters most for Mexico, which topped the list at an even higher rate than Argentina. Unlike Argentina, none of Mexico's VAR interventions produced a federation complaint, a rival coach's public objection, or sustained pundit criticism in any source found for this piece. As far as the public record shows, Mexico's corrections were simply accepted as correct calls. Argentina's rate, by contrast, came with named, disputed incidents attached to it (see below). The chart shows both teams at a similar-sized number. It can't show that difference, which is exactly why the number alone shouldn't be read as a verdict on bias in either direction.</p>
 
@@ -354,7 +343,7 @@
 
   <div class="callout">
     <div class="k">Why even this is a weak measure</div>
-    <p>Match-level fouls and cards are a step up from a single tournament-wide number, but they still can't capture <strong>consistency</strong>: whether comparable challenges were judged the same way depending on who committed them. That's a different question from volume, and it's what most of the tournament's actual officiating complaints were about. Four paired incidents were flagged independently by opposing federations, former players, and broadcast pundits, not by the original thread, which never engages with officiating at this level of detail:</p>
+    <p>Match-level fouls and cards are a step up from a single tournament-wide number, but they still can't capture <strong>consistency</strong>: whether comparable challenges were judged the same way depending on who committed them. That's a different question from volume, and it's what most of the tournament's actual officiating complaints were about. Four paired incidents were flagged independently by opposing federations, former players, and broadcast pundits:</p>
   </div>
 
   <div class="table-scroll">
@@ -388,66 +377,12 @@
   <p>No single incident proves bias on its own. Officiating at match speed is genuinely hard, and every team can point to a decision that went against it. But these are the specific, comparable-play cases behind the "inconsistency" complaint, and none of them shows up in a foul-and-card tally. Argentina's low card count on the tournament's highest foul total is itself partly what that complaint is about: several plays above would have added to the tally under a more evenly applied standard. The counting stats and the consistency question measure two different things, and only one of them shows up in a bar chart.</p>
 </section>
 
-<section id="checking-claims">
-  <p class="section-kicker">Part 4</p>
-  <h2>The thread's claims, one at a time</h2>
-
-  <div class="callout">
-    <div class="k">The pattern worth naming first</div>
-    <p>Before the claim-by-claim: every citation the thread leans on, the MIT falsehoods-spread-faster study, the illusory truth effect, Walter Lippmann's <em>Public Opinion</em>, the NewsGuard AI-content-farm numbers, is real, legitimate, and accurately described. None of them is about Messi, Argentina, or this tournament. Each one shows that manipulating public opinion is <em>possible</em>, and increasingly <em>cheap</em>, in general. None supplies direct evidence that it's what happened in this specific case. Citing real, credentialed research on an adjacent topic to make an unproven specific claim feel scientifically backed is a recognizable move, sometimes called borrowed authority. It's worth flagging on its own, separate from whether the underlying claim turns out to be true.</p>
-  </div>
-
-  <div class="claim-grid">
-    <div class="claim-cell thread">
-      <div class="tag">The thread says</div>
-      <p>"Almost nothing on the pitch really changed... the only thing that really changed was the distribution layer."</p>
-    </div>
-    <div class="claim-cell record">
-      <div class="tag">The record shows</div>
-      <p>A formal FIFA complaint from a national federation, a head coach publicly blaming the referee and the crowd, a foreign government calling for an investigation, and a viral racism accusation with a public rebuttal. None of this occurred in 2022. Whatever the algorithms did, they had genuinely new material to work with.</p>
-    </div>
-  </div>
-
-  <div class="claim-grid">
-    <div class="claim-cell thread">
-      <div class="tag">The thread says</div>
-      <p>Cites the MIT falsehoods-spread-faster study and the illusory truth effect as the mechanism behind the flip.</p>
-    </div>
-    <div class="claim-cell record">
-      <div class="tag">The record shows</div>
-      <p>Both citations check out. The Vosoughi/Roy/Aral (2018, <em>Science</em>) study and the illusory truth effect are real, well-replicated findings. What the thread doesn't do is connect them to <em>this</em> case with direct evidence. It establishes that manipulation is possible in general, then lets the reader infer it's what happened here.</p>
-    </div>
-  </div>
-
-  <div class="claim-grid">
-    <div class="claim-cell thread">
-      <div class="tag">The thread says</div>
-      <p>Invokes Barçagate, "something similar already happened to this exact player," without naming who's behind the current wave.</p>
-    </div>
-    <div class="claim-cell record">
-      <div class="tag">The record shows</div>
-      <p>Barçagate was Barcelona's own leadership paying to smear Messi to protect the club president: the opposite of "a rival funding an attack on Messi." It's a real precedent for football image manipulation, just not one that supports the implication being made.</p>
-    </div>
-  </div>
-
-  <div class="claim-grid">
-    <div class="claim-cell thread">
-      <div class="tag">The thread says</div>
-      <p>The NewsGuard AI-content-farm growth figures (49 → 614 → 3,000+).</p>
-    </div>
-    <div class="claim-cell record">
-      <div class="tag">The record shows</div>
-      <p>This one holds up well. NewsGuard's own tracking center reports figures consistent with this trajectory: 614 by Dec 2023, 3,006 by Mar 2026, 3,749 in the most recent update. Credit where due, this is the thread's most solidly sourced claim.</p>
-    </div>
-  </div>
-</section>
-
 <section id="conclusion">
-  <p class="section-kicker">Part 5</p>
+  <p class="section-kicker">Part 4</p>
   <h2>So what actually happened?</h2>
   <p>Neither "it was all manufactured propaganda" nor "the backlash was purely organic and the pitch explains everything" survives contact with the record. The more accurate, less dramatic story is layered:</p>
   <p class="wide">Argentina played a genuinely more contentious tournament than 2022: a real (if not unique) VAR benefit, the tournament's highest total foul count, and a documented pattern of comparable challenges judged differently depending on who committed them, flagged independently by three federations and multiple ex-players and pundits (Messi/Mandi versus Balogun/Muharemović chief among them). Three separate knockout matches produced on-record complaints from an opponent's federation, coach, or government. Off the pitch, the squad generated new flashpoints with no 2022 analogue: a nationalist banner at a sensitive diplomatic moment, a post-final scuffle, a viral racism accusation. Public opinion moved against Messi by a wide, measured margin, starting the moment Egypt's match produced a real, contemporaneous controversy, for reasons pollsters and respondents actually named.</p>
-  <p class="wide">The thread's diagnostic tools, the illusory truth effect, engagement-driven amplification, the falling cost of convincing fakes, are real and worth taking seriously, and its sourcing on them is accurate. But every one of those citations is about belief formation in general, not this case. Treating them as the explanation here meant leaving out an unusual amount of real, documented, comparable-play material that a data-first pass turns up in under an hour: most of it points to more mundane, harder-to-dismiss causes than a hit job.</p>
+  <p class="wide">None of that requires a coordinated campaign to explain it. It requires a physical, high-stakes tournament that Argentina won playing right up against the letter of the rules, several officiating decisions that didn't hold up well to replay, and a squad that generated its own headlines off the pitch. Algorithms and repetition effects are real forces in how any story spreads once it exists, but they had genuinely new, dated, on-record material to amplify this time, not a blank slate. The reputational collapse tracks that material closely enough that it doesn't need a more exotic explanation.</p>
 </section>
 
 <section id="method">
@@ -514,11 +449,6 @@
     <ul>
       <li><a href="https://yougov.com/en-gb/articles/55220-lionel-messi-seen-more-negatively-following-2026-world-cup" target="_blank" rel="noopener">YouGov · Messi favorability before/after</a></li>
       <li><a href="https://www.timeslive.co.za/sport/fifa-world-cup-2026/2026-07-21-poll-was-anti-lionel-messi-sentiment-at-the-world-cup-fair/" target="_blank" rel="noopener">TimesLIVE · "Was anti-Messi sentiment fair?"</a></li>
-    </ul>
-    <h4>Background &amp; other citations</h4>
-    <ul>
-      <li><a href="https://en.wikipedia.org/wiki/Bar%C3%A7agate" target="_blank" rel="noopener">Wikipedia · Barçagate background</a></li>
-      <li><a href="https://www.newsguardtech.com/special-reports/ai-tracking-center/" target="_blank" rel="noopener">NewsGuard · AI Content Farm tracking center</a></li>
     </ul>
   </div>
 </footer>
