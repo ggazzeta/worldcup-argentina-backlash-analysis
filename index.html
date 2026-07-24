@@ -1,0 +1,835 @@
+<!doctype html>
+<title>The Villain Edit: Argentina at the 2026 World Cup, Checked Against the Record</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    color-scheme: light;
+    --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.10);
+    --accent:#4a3aa7; --accent-soft:#4a3aa71a;
+    --blue:#2a78d6; --orange:#eb6834; --aqua:#1baf7a; --yellow:#eda100; --red:#e34948;
+    --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+    --success-text:#006300;
+    --serif: ui-serif, Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      color-scheme: dark;
+      --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+      --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10);
+      --accent:#9085e9; --accent-soft:#9085e926;
+      --blue:#3987e5; --orange:#d95926; --aqua:#199e70; --yellow:#c98500; --red:#e66767;
+      --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+      --success-text:#0ca30c;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10);
+    --accent:#9085e9; --accent-soft:#9085e926;
+    --blue:#3987e5; --orange:#d95926; --aqua:#199e70; --yellow:#c98500; --red:#e66767;
+    --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+    --success-text:#0ca30c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--page); color:var(--ink); font-family:var(--serif);
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px; margin:0 auto; padding:0 24px 120px;}
+  .wrap.wide{max-width:980px;}
+  header.hero{
+    padding:72px 24px 40px; border-bottom:1px solid var(--border);
+    background:linear-gradient(180deg, var(--accent-soft), transparent 70%);
+  }
+  header.hero .inner{max-width:840px; margin:0 auto;}
+  .eyebrow{
+    font-family:var(--sans); font-size:12.5px; font-weight:700; letter-spacing:.10em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--sans); font-weight:800; font-size:clamp(30px,5vw,46px);
+    line-height:1.08; letter-spacing:-0.01em; margin:0 0 18px; text-wrap:balance;
+  }
+  .dek{font-size:19px; color:var(--ink-2); max-width:640px; margin:0 0 22px; text-wrap:pretty;}
+  .byline{font-family:var(--sans); font-size:13px; color:var(--muted);}
+  .byline b{color:var(--ink-2);}
+
+  section{padding:56px 0; border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-family:var(--sans); font-weight:800; font-size:26px; letter-spacing:-0.01em;
+    margin:0 0 6px; text-wrap:balance;
+  }
+  h3{font-family:var(--sans); font-weight:700; font-size:17px; margin:28px 0 10px;}
+  .section-kicker{
+    font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--muted); margin:0 0 8px;
+  }
+  p{margin:0 0 16px; max-width:66ch;}
+  p.wide{max-width:none;}
+  a{color:var(--accent);}
+  strong{color:var(--ink);}
+
+  /* KPI row */
+  .kpi-row{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border);
+    border:1px solid var(--border); margin:32px 0 8px; font-family:var(--sans);}
+  .kpi{background:var(--surface); padding:20px 18px;}
+  .kpi .label{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px; min-height:32px;}
+  .kpi .value{font-size:30px; font-weight:800; font-variant-numeric:tabular-nums; letter-spacing:-0.01em;}
+  .kpi .value small{font-size:15px; font-weight:600; color:var(--ink-2);}
+  .kpi .sub{font-size:12.5px; color:var(--ink-2); margin-top:6px;}
+  @media (max-width:720px){.kpi-row{grid-template-columns:repeat(2,1fr);}}
+
+  .lede{font-size:20px; color:var(--ink); font-weight:400;}
+
+  /* callout */
+  .callout{
+    border-left:3px solid var(--accent); background:var(--accent-soft); padding:16px 20px;
+    margin:24px 0; border-radius:0 4px 4px 0;
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .callout .k{font-family:var(--sans); font-weight:700; font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--accent); margin-bottom:6px;}
+
+  /* timeline */
+  .timeline{margin:32px 0 8px;}
+  .tl-item{display:grid; grid-template-columns:96px 20px 1fr; gap:0 18px; position:relative;}
+  .tl-item .date{font-family:var(--sans); font-size:12.5px; color:var(--muted); padding-top:3px; text-align:right;}
+  .tl-rail{display:flex; flex-direction:column; align-items:center;}
+  .tl-dot{width:12px; height:12px; border-radius:50%; margin-top:4px; flex:none; border:2px solid var(--surface); box-shadow:0 0 0 1px var(--border);}
+  .tl-line{width:2px; flex:1; background:var(--grid); margin-top:2px;}
+  .tl-item:last-child .tl-line{display:none;}
+  .tl-body{padding-bottom:30px;}
+  .tl-stage{font-family:var(--sans); font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:2px;}
+  .tl-score{font-family:var(--sans); font-weight:800; font-size:18px; margin-bottom:6px;}
+  .tl-body p{margin-bottom:8px; font-size:15px;}
+  .tl-body p:last-child{margin-bottom:0;}
+  .dot-good{background:var(--good);}
+  .dot-warn{background:var(--warning);}
+  .dot-crit{background:var(--critical);}
+  .pill{display:inline-flex; align-items:center; gap:5px; font-family:var(--sans); font-size:11px;
+    font-weight:700; text-transform:uppercase; letter-spacing:.04em; padding:3px 9px; border-radius:99px;
+    margin-bottom:8px;}
+  .pill::before{content:""; width:6px; height:6px; border-radius:50%;}
+  .pill.p-good{color:var(--success-text); background:color-mix(in srgb, var(--good) 16%, transparent);}
+  .pill.p-good::before{background:var(--good);}
+  .pill.p-warn{color:#8a5a00; background:color-mix(in srgb, var(--warning) 24%, transparent);}
+  .pill.p-warn::before{background:var(--warning);}
+  .pill.p-crit{color:var(--critical); background:color-mix(in srgb, var(--critical) 16%, transparent);}
+  .pill.p-crit::before{background:var(--critical);}
+  :root[data-theme="dark"] .pill.p-warn, @media (prefers-color-scheme:dark){.pill.p-warn{color:#ffd27a;}}
+
+  /* charts */
+  .chart-card{background:var(--surface); border:1px solid var(--border); border-radius:8px;
+    padding:24px 24px 18px; margin:28px 0;}
+  .chart-title{font-family:var(--sans); font-weight:700; font-size:15px; margin-bottom:2px;}
+  .chart-note{font-family:var(--sans); font-size:12.5px; color:var(--muted); margin-bottom:18px;}
+  .chart-source{font-family:var(--sans); font-size:11.5px; color:var(--muted); margin-top:14px; border-top:1px solid var(--grid); padding-top:10px;}
+  svg text{font-family:var(--sans);}
+  .axis-label{fill:var(--muted); font-size:11px;}
+  .value-label{fill:var(--ink); font-size:12px; font-weight:700; font-variant-numeric:tabular-nums;}
+  .name-label{fill:var(--ink-2); font-size:12.5px;}
+  .legend{display:flex; gap:18px; flex-wrap:wrap; font-family:var(--sans); font-size:12px; color:var(--ink-2); margin-bottom:16px;}
+  .legend .sw{display:inline-flex; align-items:center; gap:6px;}
+  .legend .sw i{width:10px; height:10px; border-radius:2px; display:inline-block;}
+  .bar-emph{fill:var(--accent);}
+  .bar-context{fill:var(--muted); opacity:.55;}
+  .tooltip{
+    position:fixed; pointer-events:none; background:var(--ink); color:var(--page);
+    font-family:var(--sans); font-size:12px; padding:7px 10px; border-radius:5px; z-index:50;
+    opacity:0; transform:translate(-50%,-100%); transition:opacity .1s; max-width:220px; line-height:1.4;
+  }
+  .hover-target:hover{cursor:pointer; opacity:.85;}
+
+  /* claim cards */
+  .claim-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border);
+    border:1px solid var(--border); margin:24px 0; font-family:var(--sans);}
+  .claim-cell{background:var(--surface); padding:20px 22px;}
+  .claim-cell.thread{border-left:3px solid var(--muted);}
+  .claim-cell.record{border-left:3px solid var(--accent);}
+  .claim-cell .tag{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:8px;}
+  .claim-cell.record .tag{color:var(--accent);}
+  .claim-cell p{font-family:var(--serif); font-size:15px; margin-bottom:10px;}
+  .claim-cell p:last-child{margin-bottom:0;}
+  @media (max-width:720px){.claim-grid{grid-template-columns:1fr;}}
+
+  /* ledger table */
+  .ledger{width:100%; border-collapse:collapse; font-family:var(--sans); font-size:13.5px; margin:24px 0;}
+  .ledger th{text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted);
+    padding:0 14px 10px; border-bottom:1px solid var(--axis); font-weight:700;}
+  .ledger td{padding:14px; border-bottom:1px solid var(--grid); vertical-align:top; color:var(--ink-2);}
+  .ledger td.claim{color:var(--ink); font-family:var(--serif); font-size:14.5px;}
+  .ledger tr:last-child td{border-bottom:none;}
+  .table-scroll{overflow-x:auto; margin:0 -4px;}
+  .table-scroll .ledger{min-width:640px;}
+
+  footer{padding:48px 0 0; font-family:var(--sans);}
+  .src-grid{columns:2; column-gap:32px; font-size:12.5px; color:var(--ink-2);}
+  .src-grid h4{font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); margin:18px 0 8px; break-after:avoid;}
+  .src-grid ul{margin:0 0 4px; padding-left:16px;}
+  .src-grid li{margin-bottom:6px; break-inside:avoid;}
+  @media (max-width:640px){.src-grid{columns:1;}}
+
+  .methodology{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:20px 24px; margin:20px 0; font-size:14.5px; font-family:var(--sans); color:var(--ink-2);}
+  .methodology h4{font-size:13px; color:var(--ink); margin:0 0 8px;}
+
+  .ratio-trend{display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-family:var(--sans); padding:10px 0 6px;}
+  .ratio-trend .step{text-align:center;}
+  .ratio-trend .step .n{font-size:28px; font-weight:800; font-variant-numeric:tabular-nums;}
+  .ratio-trend .step .n.accent{color:var(--accent);}
+  .ratio-trend .step .l{font-size:12px; color:var(--ink-2); margin-top:4px; line-height:1.35;}
+  .ratio-trend .arrow{color:var(--muted); font-size:20px;}
+
+  ::selection{background:var(--accent); color:#fff;}
+</style>
+
+<div class="tooltip" id="tooltip"></div>
+
+<header class="hero">
+  <div class="inner">
+    <p class="eyebrow">Data review · Argentina, World Cup 2026</p>
+    <h1>The villain edit, checked against the record</h1>
+    <p class="dek">A viral thread called the turn against Messi and Argentina a manufactured propaganda operation. Here's what the matches, referees, polls, and fact-checks actually show.</p>
+    <p class="byline">Independent analysis · sourced throughout · last updated <b>24 July 2026</b></p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="intro">
+  <p class="lede">Spain beat defending champions Argentina 1–0 in extra time to win the 2026 World Cup on July 19. Days later, a widely shared thread argued that Messi's shift from "beloved champion" to "villain" was mostly manufactured: algorithm-driven clips, repetition effects, maybe a paid campaign, with almost nothing on the pitch actually changing. That's a testable claim. This piece tests it, using match data, FIFA's own officiating numbers, a real public-opinion poll, and the fact-checks published during the tournament, not the "illustrative, not measured" chart the thread used to make its case.</p>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="label">Messi favorability, UK</div>
+      <div class="value">55% <small>→</small> 29%</div>
+      <div class="sub">Net rating: +46 → −15 · YouGov</div>
+    </div>
+    <div class="kpi">
+      <div class="label">VAR net rate, Argentina</div>
+      <div class="value">+6.7<small>/100 fouls</small></div>
+      <div class="sub">2nd of 5 teams measured; Mexico's higher rate drew no complaints</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Fouls committed</div>
+      <div class="value">113 <small>total</small></div>
+      <div class="sub">Full tournament, incl. final · 13 yellow, 1 red</div>
+    </div>
+    <div class="kpi">
+      <div class="label">"Paid campaign" claims checked</div>
+      <div class="value">0<small>/5 confirmed</small></div>
+      <div class="sub">Every specific one traced to false or unverified</div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <p class="section-kicker">Part 1</p>
+  <h2>What actually happened, match by match</h2>
+  <p>The thread claims almost nothing on the pitch changed between 2022 and 2026. Here's every Argentina match this tournament, with the incidents that made real news, not retrospective vibes.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="date">Jun 17–28</div>
+      <div class="tl-rail"><div class="tl-dot dot-good"></div><div class="tl-line"></div></div>
+      <div class="tl-body">
+        <div class="tl-stage">Group J</div>
+        <div class="tl-score">3–0 Algeria · 2–0 Austria · 3–1 Jordan (away)</div>
+        <p>Argentina topped the group with 9 points and no refereeing controversy in any of the three games.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="date">Jul 3</div>
+      <div class="tl-rail"><div class="tl-dot dot-warn"></div><div class="tl-line"></div></div>
+      <div class="tl-body">
+        <div class="tl-stage">Round of 32</div>
+        <div class="tl-score">Argentina 3–2 Cape Verde (a.e.t.)</div>
+        <span class="pill p-warn">Officiating dispute</span>
+        <p>Defending a 3–2 lead late on, Argentina benefited when referee Drew Fischer let an injured defender return before the mandatory one-minute stoppage had elapsed, during a Cape Verde corner. Cape Verde, debutants chasing a historic result, also had several uncalled fouls go against them. Argentina won in extra time.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="date">Jul 7</div>
+      <div class="tl-rail"><div class="tl-dot dot-crit"></div><div class="tl-line"></div></div>
+      <div class="tl-body">
+        <div class="tl-stage">Round of 16</div>
+        <div class="tl-score">Argentina 3–2 Egypt</div>
+        <span class="pill p-crit">Formal complaint filed</span>
+        <p>Egypt led 2–0 with 11 minutes left, then conceded three. A 58th-minute Egyptian goal was VAR-disallowed for a soft foul elsewhere on the pitch, and VAR didn't review a possible foul on Mohamed Salah in the box moments before Argentina's winner. Egypt's FA filed a formal FIFA complaint alleging "double standards" and "discriminating" officiating. FIFA's Pierluigi Collina publicly rejected the bias allegation and defended referee François Letexier's integrity.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="date">Jul 11</div>
+      <div class="tl-rail"><div class="tl-dot dot-crit"></div><div class="tl-line"></div></div>
+      <div class="tl-body">
+        <div class="tl-stage">Quarter-final</div>
+        <div class="tl-score">Argentina 3–1 Switzerland (a.e.t.)</div>
+        <span class="pill p-crit">Rule misapplied, per analysts</span>
+        <p>Referee João Pinheiro booked Argentina's Leandro Paredes for a challenge on Breel Embolo, then reversed it on VAR review and sent Embolo off for simulation: the first dismissal of its kind under the tournament's new "mistaken identity" rule. Several outlets noted the rule was written for cases where the same offense gets pinned on the wrong player, not two different offenses (a foul versus a dive). Switzerland coach Murat Yakin: "We didn't just play against a great Argentina side... we also played against 70,000 Argentine fans, the referee and VAR."</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="date">Jul 15</div>
+      <div class="tl-rail"><div class="tl-dot dot-crit"></div><div class="tl-line"></div></div>
+      <div class="tl-body">
+        <div class="tl-stage">Semi-final</div>
+        <div class="tl-score">England 1–2 Argentina</div>
+        <span class="pill p-crit">Diplomatic incident</span>
+        <p>Argentina won with two late goals. In the celebration, players unfurled a "Las Malvinas son Argentinas" banner, smuggled into the stadium by a fan. UK Prime Minister Keir Starmer publicly called for a FIFA investigation. Nothing like it happened in 2022.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="date">Jul 19</div>
+      <div class="tl-rail"><div class="tl-dot dot-crit"></div></div>
+      <div class="tl-body">
+        <div class="tl-stage">Final</div>
+        <div class="tl-score">Spain 1–0 Argentina (a.e.t.)</div>
+        <span class="pill p-crit">Multiple flashpoints</span>
+        <p>Ferran Torres scored the only goal in extra time. Enzo Fernández was sent off in the 93rd minute for a second yellow card, Argentina's only red card of the tournament, and they finished a man down. Messi had a quiet game by his standards: roughly 54 touches, one blocked shot, no touches in the box. Afterward, Argentina's squad appeared to turn their backs during Spain's trophy ceremony (players say they were facing their own fans, not Spain), Leandro Paredes was shown a red card for a post-whistle scuffle with Eric García and Gavi, later erased from the record when FIFA called its appearance an administrative error and confirmed no discipline was imposed, and a viral Instagram post from actor Samuel L. Jackson called Argentina "historically racist," citing incidents from the tournament, including a fan telling a Black streamer to "go cry at the zoo," which FIFA had already condemned. Black Argentine voices publicly pushed back on the claim as overbroad.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="k">Reading this timeline against the thread</div>
+    <p>Four of Argentina's six knockout-round moments produced real, contemporaneous controversy: an official FIFA complaint, a head coach's on-record complaint, a UK government statement, and a public racism accusation with a public rebuttal. That's a different picture from "almost nothing changed and the algorithm did the rest." This tournament produced an unusually dense run of disputed decisions and off-pitch flashpoints involving Argentina directly, in a way 2022 largely didn't.</p>
+  </div>
+</section>
+
+<section id="sentiment">
+  <p class="section-kicker">Part 2</p>
+  <h2>The sentiment data the thread didn't use</h2>
+  <p>The thread's own "public mood on Messi" chart carries a footnote noting it's illustrative, not measured sentiment data. A real, sampled measurement exists: <a href="https://yougov.com/en-gb/articles/55220-lionel-messi-seen-more-negatively-following-2026-world-cup" target="_blank" rel="noopener">YouGov polled British adults</a> three times: before the tournament, during the Round of 16, and again after the final. That's an actual trajectory, not one before/after snapshot, and it doesn't move in a smooth line.</p>
+
+  <div class="chart-card">
+    <div class="chart-title">Messi net favorability, three measured points</div>
+    <div class="chart-note">Net favorable = % favorable minus % unfavorable, UK adults. Only these three waves were fielded; the connecting lines are straight, not interpolated data.</div>
+    <div id="chart-trend"></div>
+    <div class="chart-source">Source: YouGov. Waves fielded pre-tournament, during the Round of 16, and post-final (published 22 Jul 2026).</div>
+  </div>
+
+  <p>The real shape isn't the thread's smooth glide from adoration to villain. Net favorability barely moved through the group stage and into the Round of 16, +46 to +39, while Argentina beat Algeria, Austria, Jordan, Cape Verde, and Egypt. Then it collapsed 54 points in under two weeks: the same stretch that held the Embolo red card and Yakin's complaint, the Falklands banner, and the final's scuffle, back-turning, and racism accusation. That pattern cuts against the thread's premise. The drop tracks specific, dated events, not a gradual algorithmic drift.</p>
+
+  <p>Messi wasn't the only reputation this tournament moved:</p>
+
+  <div class="chart-card">
+    <div class="chart-title">Favorability, before → after the World Cup (UK adults)</div>
+    <div class="chart-note">Share viewing each figure favorably. Sorted by size of shift.</div>
+    <div id="chart-dumbbell"></div>
+    <div class="chart-source">Source: YouGov, published 22 Jul 2026. Tuchel's favorable share held roughly flat (36–39%), but his unfavorable share rose from 7% to 18%, which this favorable-only chart doesn't capture.</div>
+  </div>
+
+  <p>Ronaldo's favorability also fell, while Jude Bellingham's rose sharply. World Cups routinely reshuffle reputations based on what players actually did: winners' stock rises, antagonists take a hit. That looks less like a manufactured hit piece and more like the normal, if harsh, way a month of closely watched football moves public opinion.</p>
+</section>
+
+<section id="officiating">
+  <p class="section-kicker">Part 3</p>
+  <h2>The officiating numbers</h2>
+  <p>Independent of anecdote, VAR-intervention data from Northeastern University's NetSI Sport research group, led by network scientist Brennan Klein, gives a net rate (favorable interventions minus unfavorable ones, per 100 fouls) for teams through the Round of 16. The same underlying dataset was reported independently by <a href="https://www.outlookindia.com/sports/football/fifa-world-cup-2026-rigged-allegations-var-data-argentina-favoritism-explained" target="_blank" rel="noopener">Outlook India</a>, <a href="https://www.thenationalnews.com/sport/world-cup-2026/2026/07/15/var-favouritism-fifa-world-cup-2026/" target="_blank" rel="noopener">The National</a>, <a href="https://sports.yahoo.com/articles/var-intervention-rate-shows-just-235845414.html" target="_blank" rel="noopener">Yahoo Sports</a>, and <a href="https://khelnow.com/football/argentina-var-data-fifa-world-cup-2026" target="_blank" rel="noopener">Khelnow</a>, so this isn't a single outlet's number.</p>
+
+  <div class="chart-card">
+    <div class="chart-title">Net VAR intervention rate, per 100 fouls</div>
+    <div class="chart-note">Positive = net benefit from VAR reviews. Negative = net cost. Five teams with available data.</div>
+    <div id="chart-var"></div>
+    <div class="chart-source">Source: Brennan Klein, Northeastern NetSI Sport, Jul 2026. Reported by Outlook India, The National, Yahoo Sports, and Khelnow.</div>
+  </div>
+
+  <p>Argentina really was the second-most-favored team by this measure, so that part of the "favoritism" perception isn't invented. But it needs a caveat the thread never applies in reverse: the metric counts intervention frequency, not correctness. Klein was explicit about the limit. "They are topping this list because the referees missed fouls that VAR thought should have been fouls," he told reporters, calling any leap from that to "bias" a "hop, step and a jump away" from what the numbers actually show.</p>
+
+  <p>That distinction matters most for Mexico, which topped the list at an even higher rate than Argentina. Unlike Argentina, none of Mexico's VAR interventions produced a federation complaint, a rival coach's public objection, or sustained pundit criticism in any source found for this piece. As far as the public record shows, Mexico's corrections were simply accepted as correct calls. Argentina's rate, by contrast, came with named, disputed incidents attached to it (see below). The chart shows both teams at a similar-sized number. It can't show that difference, which is exactly why the number alone shouldn't be read as a verdict on bias in either direction.</p>
+
+  <div class="chart-card">
+    <div class="chart-title">Fouls per yellow card, quarter-finalists (through the Round of 16)</div>
+    <div class="chart-note">Published Jul 8, before any quarter-final was played. Higher = fewer cards relative to fouls, at that point in the tournament.</div>
+    <div id="chart-fouls"></div>
+    <div class="chart-source">Source: Khelnow, Jul 8 2026. A separate points-based "fair play" ranking by GiveMeSport, which weights fouls and cards differently, ranks Argentina as the tournament's most-carded team overall: two legitimate methodologies, opposite headlines.</div>
+  </div>
+
+  <p>Two of the numbers above need a date stamped on them. The 1-in-22 ratio is a Round of 16 snapshot, filed before Argentina played their last four matches. So is the "88 fouls, 9 yellow, 0 red" figure that circulated widely in tournament recaps: it's a July 17 tally, filed two days before the final. The final added 25 fouls, 4 yellow cards, and Argentina's only red card of the tournament, Enzo Fernández, sent off in the 93rd minute for a second yellow. Full tournament: <strong>113 fouls, 13 yellow cards, 1 red</strong>. (A second red, shown to Leandro Paredes for the post-whistle scuffle, was erased from the record days later: FIFA called its appearance an administrative error and confirmed no discipline was imposed. That's why some recaps list two Argentina reds from the final and others list one.)</p>
+
+  <div class="chart-card">
+    <div class="chart-title">Argentina's own ratio, as the tournament went on</div>
+    <div class="chart-note">Recomputed at three checkpoints using yellow cards only, same method as the chart above.</div>
+    <div class="ratio-trend">
+      <div class="step"><div class="n">22</div><div class="l">fouls per card<br>through R16 (Jul 7)</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">9.8</div><div class="l">fouls per card<br>through semifinal (Jul 15)</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n accent">8.7</div><div class="l">fouls per card<br>full tournament (Jul 19)</div></div>
+    </div>
+    <div class="chart-source">Computed from Khelnow (Jul 8), Minute Mirror (Jul 17), and post-final match reports on Enzo Fernández's red card. By the end, Argentina's ratio sat closer to England's (7) than to the "22" figure most widely shared during the tournament.</div>
+  </div>
+
+  <div class="callout">
+    <div class="k">Why that count, on its own, is a weak measure</div>
+    <p>A tally of 113 fouls and 13 yellow cards treats every whistle, and every play that <em>didn't</em> get whistled, as equally weighted. It can't capture <strong>consistency</strong>: whether comparable challenges were judged the same way depending on who committed them. That's a different question from volume, and it's what most of the tournament's actual officiating complaints were about. Four paired incidents were flagged independently by opposing federations, former players, and broadcast pundits, not by the original thread, which never engages with officiating at this level of detail:</p>
+  </div>
+
+  <div class="table-scroll">
+  <table class="ledger">
+    <thead><tr><th>What happened</th><th>Compared with</th><th>Who flagged the gap</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="claim">Messi's studs-up challenge on Algeria's Aïssa Mandi (group stage) drew a free-kick but no card, including after VAR review.</td>
+        <td>USA's Folarin Balogun sent off for a comparable-or-lesser challenge on Bosnia's Tarik Muharemović (Round of 32); several analysts called Messi's the more serious foul of the two.</td>
+        <td>Algeria's federation, ex-USMNT defender Alexi Lalas, multiple broadcast pundits</td>
+      </tr>
+      <tr>
+        <td class="claim">Alexis Mac Allister's challenge on Austria's Xaver Schlager went uncalled in the build-up to Messi's opening goal.</td>
+        <td>Austria's coach argued the fourth official should have flagged it as clearly as similar challenges were flagged elsewhere.</td>
+        <td>Austria coach Ralf Rangnick, pundit Peter Schmeichel</td>
+      </tr>
+      <tr>
+        <td class="claim">Egypt's Mostafa Ziko had a goal disallowed for Marwan Attia's shirt-pull on Lisandro Martínez.</td>
+        <td>Mac Allister's own shirt-pull in the build-up to Argentina's late winner, minutes later in the same match, wasn't reviewed the same way.</td>
+        <td>Egypt's formal FIFA complaint; pundits Ian Wright and Sam Allardyce</td>
+      </tr>
+      <tr>
+        <td class="claim">In the final, Nico Williams had a goal disallowed for Mikel Merino's foot brushing Nicolás Otamendi's, described by analysts as minor, borderline contact.</td>
+        <td>Commentators noted it was the kind of contact usually waved through elsewhere in the tournament.</td>
+        <td>Post-match broadcast analysis</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>No single incident proves bias on its own. Officiating at match speed is genuinely hard, and every team can point to a decision that went against it. But these are the specific, comparable-play cases behind the "inconsistency" complaint, and none of them shows up in a foul-and-card tally. Argentina's low card count on the tournament's highest foul total is itself partly what that complaint is about: several plays above would have added to the tally under a more evenly applied standard. The counting stats and the consistency question measure two different things, and only one of them shows up in a bar chart.</p>
+</section>
+
+<section id="misinfo">
+  <p class="section-kicker">Part 4</p>
+  <h2>The misinformation that actually surfaced, and which way it pointed</h2>
+  <p>The thread implies, via a pointed callback to Barcelona's 2020–21 "Barçagate" scandal, that something similar (a funded campaign to damage Messi's image) is "probably" happening again, without naming who's behind it. Worth being precise about what Barçagate actually was: <a href="https://en.wikipedia.org/wiki/Bar%C3%A7agate" target="_blank" rel="noopener">a Catalan police raid found Barcelona's own board</a> had paid a firm to attack the reputations of Messi, Piqué, and Xavi, to protect the club president, not something a rival paid for. It's a real precedent for image manipulation in football, just not the one the thread implies.</p>
+
+  <p>More useful: this specific tournament produced several concrete "paid campaign" claims that journalists and fact-checkers actually chased down. Here's what they found.</p>
+
+  <div class="table-scroll">
+  <table class="ledger">
+    <thead>
+      <tr><th>Claim in circulation</th><th>Direction</th><th>What checked out</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="claim">Referee François Letexier received a "mysterious $500k payment" before the Egypt match.</td>
+        <td>Anti-Argentina (implies match-fixing in Argentina's favor)</td>
+        <td><span class="pill p-crit">Fabricated</span> No authority, FIFA statement, or outlet confirmed any investigation or payment.</td>
+      </tr>
+      <tr>
+        <td class="claim">Letexier was "expelled" from the tournament after Egypt's complaint.</td>
+        <td>Anti-Argentina</td>
+        <td><span class="pill p-crit">False</span> He simply wasn't assigned further matches, normal rotation, not a sanction.</td>
+      </tr>
+      <tr>
+        <td class="claim">Letexier's religious background / "Israel influenced the result."</td>
+        <td>Anti-Argentina (antisemitic conspiracy)</td>
+        <td><span class="pill p-crit">Fabricated</span> Traced to a post-match Wikipedia edit citing a source that said no such thing.</td>
+      </tr>
+      <tr>
+        <td class="claim">A "PR360 Sports Communications" leak showing a firm paid influencers to call the tournament "rigged" for Argentina.</td>
+        <td>Anti-Argentina</td>
+        <td><span class="pill p-warn">Unverified / satire</span> Cited by AFA as possible evidence of a campaign against them; reporting flags it as almost certainly AI-generated.</td>
+      </tr>
+      <tr>
+        <td class="claim">Cristiano Ronaldo's team (Gestifute) is funding the anti-Messi social campaign, the exact claim the original thread gestures at without naming.</td>
+        <td>Pro-Argentina (delegitimizes the criticism)</td>
+        <td><span class="pill p-crit">Fabricated</span> Traced to a self-labeled parody account; no link to Ronaldo's real representatives.</td>
+      </tr>
+      <tr>
+        <td class="claim">Argentina's own federation (AFA) says it is weighing legal action over a coordinated misinformation campaign targeting the team.</td>
+        <td>Pro-Argentina (defensive claim)</td>
+        <td><span class="pill p-warn">Under review</span> AFA says it's gathering evidence; not yet independently substantiated as of this writing.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout">
+    <div class="k">The pattern in the ledger</div>
+    <p>Every specific, checkable "someone is paying for this" claim that circulated this tournament, in <em>either</em> direction, turned out to be fabricated, satirical, or unverified. That includes the one claim that would have directly confirmed the original thread's thesis, a funded anti-Messi operation: it traced to a parody account. This doesn't prove no paid activity exists anywhere. It means the specific evidence offered for it, this cycle, didn't hold up on either side.</p>
+  </div>
+
+  <p>Separately, bot-analysis firm Cyabra reviewed 52 million World Cup mentions and found inauthentic accounts made up 17.7% of the profiles driving <em>one</em> viral story, about Norway's team, not Argentina. That's real evidence coordinated amplification existed somewhere in this tournament's discourse. It isn't evidence it was concentrated on Messi.</p>
+</section>
+
+<section id="checking-claims">
+  <p class="section-kicker">Part 5</p>
+  <h2>The thread's claims, one at a time</h2>
+
+  <div class="callout">
+    <div class="k">The pattern worth naming first</div>
+    <p>Before the claim-by-claim: every citation the thread leans on, the MIT falsehoods-spread-faster study, the illusory truth effect, Walter Lippmann's <em>Public Opinion</em>, the NewsGuard AI-content-farm numbers, is real, legitimate, and accurately described. None of them is about Messi, Argentina, or this tournament. Each one shows that manipulating public opinion is <em>possible</em>, and increasingly <em>cheap</em>, in general. None supplies direct evidence that it's what happened in this specific case. Citing real, credentialed research on an adjacent topic to make an unproven specific claim feel scientifically backed is a recognizable move, sometimes called borrowed authority. It's worth flagging on its own, separate from whether the underlying claim turns out to be true.</p>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-cell thread">
+      <div class="tag">The thread says</div>
+      <p>"Almost nothing on the pitch really changed... the only thing that really changed was the distribution layer."</p>
+    </div>
+    <div class="claim-cell record">
+      <div class="tag">The record shows</div>
+      <p>A formal FIFA complaint from a national federation, a head coach publicly blaming the referee and the crowd, a foreign government calling for an investigation, and a viral racism accusation with a public rebuttal. None of this occurred in 2022. Whatever the algorithms did, they had genuinely new material to work with.</p>
+    </div>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-cell thread">
+      <div class="tag">The thread says</div>
+      <p>Cites the MIT falsehoods-spread-faster study and the illusory truth effect as the mechanism behind the flip.</p>
+    </div>
+    <div class="claim-cell record">
+      <div class="tag">The record shows</div>
+      <p>Both citations check out. The Vosoughi/Roy/Aral (2018, <em>Science</em>) study and the illusory truth effect are real, well-replicated findings. What the thread doesn't do is connect them to <em>this</em> case with direct evidence. It establishes that manipulation is possible in general, then lets the reader infer it's what happened here.</p>
+    </div>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-cell thread">
+      <div class="tag">The thread says</div>
+      <p>Invokes Barçagate, "something similar already happened to this exact player," without naming who's behind the current wave.</p>
+    </div>
+    <div class="claim-cell record">
+      <div class="tag">The record shows</div>
+      <p>Barçagate was Barcelona's own leadership paying to smear Messi to protect the club president: the opposite of "a rival funding an attack on Messi." It's a real precedent for football image manipulation, just not one that supports the implication being made.</p>
+    </div>
+  </div>
+
+  <div class="claim-grid">
+    <div class="claim-cell thread">
+      <div class="tag">The thread says</div>
+      <p>The NewsGuard AI-content-farm growth figures (49 → 614 → 3,000+).</p>
+    </div>
+    <div class="claim-cell record">
+      <div class="tag">The record shows</div>
+      <p>This one holds up well. NewsGuard's own tracking center reports figures consistent with this trajectory: 614 by Dec 2023, 3,006 by Mar 2026, 3,749 in the most recent update. Credit where due, this is the thread's most solidly sourced claim.</p>
+    </div>
+  </div>
+</section>
+
+<section id="conclusion">
+  <p class="section-kicker">Part 6</p>
+  <h2>So what actually happened?</h2>
+  <p>Neither "it was all manufactured propaganda" nor "the backlash was purely organic and the pitch explains everything" survives contact with the record. The more accurate, less dramatic story is layered:</p>
+  <p class="wide">Argentina played a genuinely more contentious tournament than 2022: a real (if not unique) VAR benefit, the tournament's highest total foul count, a fouls-to-card ratio that looked exceptional at the Round of 16 and far more ordinary by the final, and a documented pattern of comparable challenges judged differently depending on who committed them, flagged independently by three federations and multiple ex-players and pundits (Messi/Mandi versus Balogun/Muharemović chief among them). Three separate knockout matches produced on-record complaints from an opponent's federation, coach, or government. Off the pitch, the squad generated new flashpoints with no 2022 analogue: a nationalist banner at a sensitive diplomatic moment, a post-final scuffle, a viral racism accusation. Public opinion moved against Messi by a wide, measured margin, for reasons pollsters and respondents actually named.</p>
+  <p class="wide">A real and growing ecosystem of cheap AI-generated content did add fabricated claims to the discourse this cycle, just not mainly in the direction the thread assumes. The one "paid campaign" claim that would have proven its point turned out to be satire, while pro-Argentina fabrications (a bribed referee, an antisemitic conspiracy, a rigged tournament) circulated at least as widely.</p>
+  <p class="wide">The thread's diagnostic tools, the illusory truth effect, engagement-driven amplification, the falling cost of convincing fakes, are real and worth taking seriously, and its sourcing on them is accurate. But every one of those citations is about belief formation in general, not this case. Treating them as the explanation here meant leaving out an unusual amount of real, documented, comparable-play material that a data-first pass turns up in under an hour: most of it points to more mundane, harder-to-dismiss causes than a hit job.</p>
+</section>
+
+<section id="method">
+  <p class="section-kicker">Notes</p>
+  <h2>Methodology &amp; limits</h2>
+  <div class="methodology">
+    <h4>What counts as "sentiment data" here</h4>
+    <p>One fielded public-opinion poll (YouGov, UK adults, pre/post-tournament), plus a qualitative read of match reports and commentary from outlets across the countries involved (wire coverage, ESPN, Al Jazeera, NBC, beIN, Yahoo Sports, regional Argentine and Egyptian press where available). This isn't platform-level engagement or sentiment-classifier data; no such dataset was accessible for this piece. Claims about "how social media felt" lean on published polling and on what journalists reported fans and officials saying, not on a direct measurement of the feeds themselves.</p>
+    <h4>Where the data runs out</h4>
+    <p>The VAR-rate figures cover only five teams with published numbers through the Round of 16, and the underlying study measures where VAR corrected the on-field referee, not whether the correction was fair (see Part 3). A full 48-team dataset would be more conclusive. Fouls/cards figures are tournament totals from public stats providers and may be revised. The misinformation ledger reflects claims prominent enough to be fact-checked in real time: a sample, not a census, of everything that circulated. The four paired officiating incidents in Part 3 are likewise the ones that generated enough coverage to be findable, not an exhaustive review of every whistle in the tournament. A genuinely complete consistency audit would require coding every foul in every match against a fixed standard, which no public dataset currently does.</p>
+  </div>
+</section>
+
+<footer>
+  <p class="section-kicker">Sources</p>
+  <div class="src-grid">
+    <h4>Matches &amp; results</h4>
+    <ul>
+      <li><a href="https://www.espn.com/soccer/team/results/_/id/202/league/FIFA.WORLD" target="_blank" rel="noopener">ESPN · Argentina 2026 World Cup results</a></li>
+      <li><a href="https://www.squawka.com/en/news/world-cup/argentina-world-cup-2026-route-to-the-final-18-07/" target="_blank" rel="noopener">Squawka · Argentina's route to the final</a></li>
+      <li><a href="https://www.espn.com/soccer/story/_/id/49402253/world-cup-spain-win-lionel-messi-argentina-reaction-analysis-ferran-torres" target="_blank" rel="noopener">ESPN · Spain win the final, Messi/Argentina reaction</a></li>
+      <li><a href="https://www.npr.org/2026/07/15/nx-s1-5893895/2026-world-cup-fifa-argentina-england-semifinal" target="_blank" rel="noopener">NPR · Argentina beat England in the semifinal</a></li>
+    </ul>
+    <h4>Officiating controversies</h4>
+    <ul>
+      <li><a href="https://www.sportbible.com/football/football-news/fifa-world-cup/fifa-rule-world-cup-argentina-cape-verde-156876-20260704" target="_blank" rel="noopener">SPORTbible · Cape Verde injury-protocol controversy</a></li>
+      <li><a href="https://www.nbcnews.com/sports/soccer/world-cup-2026-egypt-complaint-loss-argentina-rcna353470" target="_blank" rel="noopener">NBC News · Egypt's formal complaint</a></li>
+      <li><a href="https://www.espn.com/soccer/story/_/id/49305559/egypt-argentina-world-cup-2026-referee-var-knockout" target="_blank" rel="noopener">ESPN · Egypt FA statement, Collina's response</a></li>
+      <li><a href="https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/did-argentina-receive-favorable-calls-murat-yakin-blasts-referee-and-var-after-switzerland-s-exit-2026-07-12" target="_blank" rel="noopener">beIN Sports · Yakin on the Embolo red card</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_officiating_controversies" target="_blank" rel="noopener">Wikipedia · 2026 World Cup officiating controversies (overview)</a></li>
+      <li><a href="https://www.espn.com/soccer/story/_/id/49252206/messi-balogun-why-two-tackles-sparked-world-cup-outrage" target="_blank" rel="noopener">ESPN · Messi vs. Balogun, why two tackles sparked outrage</a></li>
+      <li><a href="https://sports.yahoo.com/articles/one-rule-for-messi-one-for-everyone-else-us-fury-over-balogun-red-card-030236859.html" target="_blank" rel="noopener">Yahoo Sports · "One rule for Messi, one for everyone else?"</a></li>
+      <li><a href="https://sports.yahoo.com/articles/austria-coach-ralf-rangnick-rages-223747016.html" target="_blank" rel="noopener">Yahoo Sports · Rangnick on the Austria non-call</a></li>
+    </ul>
+    <h4>VAR data (independent reports on the same dataset)</h4>
+    <ul>
+      <li><a href="https://news.northeastern.edu/world-cup-2026-data-analysis/" target="_blank" rel="noopener">Northeastern Global News · the original NetSI Sport analysis</a></li>
+      <li><a href="https://www.outlookindia.com/sports/football/fifa-world-cup-2026-rigged-allegations-var-data-argentina-favoritism-explained" target="_blank" rel="noopener">Outlook India · VAR data on favoritism claims</a></li>
+      <li><a href="https://www.thenationalnews.com/sport/world-cup-2026/2026/07/15/var-favouritism-fifa-world-cup-2026/" target="_blank" rel="noopener">The National · what VAR data shows about favoritism</a></li>
+      <li><a href="https://sports.yahoo.com/articles/var-intervention-rate-shows-just-235845414.html" target="_blank" rel="noopener">Yahoo Sports · VAR intervention rate and "VARgentina"</a></li>
+      <li><a href="https://khelnow.com/football/argentina-var-data-fifa-world-cup-2026" target="_blank" rel="noopener">Khelnow · is the World Cup rigged for Argentina?</a></li>
+    </ul>
+    <h4>Fouls &amp; discipline</h4>
+    <ul>
+      <li><a href="https://khelnow.com/football/fifa-world-cup-quarterfinalists-ranked-yellow-cards-per-foul-2026" target="_blank" rel="noopener">Khelnow · quarter-finalists ranked by cards per foul (Jul 8)</a></li>
+      <li><a href="https://www.givemesport.com/every-world-cup-nation-ranked-best-worst-fair-play-football-soccer/" target="_blank" rel="noopener">GiveMeSport · every nation ranked by fair play</a></li>
+      <li><a href="https://www.squawka.com/en/news/world-cup/stat-leaders-world-cup-2026-discipline/" target="_blank" rel="noopener">Squawka · discipline stat leaders</a></li>
+      <li><a href="https://minutemirror.com.pk/argentina-records-most-fouls-in-fifa-world-cup-2026-but-avoids-heavy-disciplinary-action-592588/" target="_blank" rel="noopener">Minute Mirror · the pre-final "88 fouls" tally (Jul 17)</a></li>
+      <li><a href="https://sports.yahoo.com/soccer/breaking-news/article/world-cup-final-late-red-card-on-enzo-fernandez-leaves-argentina-a-man-down-in-extra-time-of-spains-1-0-win-205736892.html" target="_blank" rel="noopener">Yahoo Sports · Enzo Fernández's red card in the final</a></li>
+      <li><a href="https://sports.yahoo.com/articles/argentina-world-cup-final-red-144524307.html" target="_blank" rel="noopener">Yahoo Sports · Paredes's red card rescinded by FIFA</a></li>
+    </ul>
+    <h4>Off-pitch incidents</h4>
+    <ul>
+      <li><a href="https://www.yahoo.com/news/world/article/why-england-is-angry-about-argentina-celebrating-its-win-with-a-falkland-islands-banner--las-malvinas-son-argentinas-192956021.html" target="_blank" rel="noopener">Yahoo News · the Falklands banner</a></li>
+      <li><a href="https://www.aljazeera.com/sports/2026/7/21/argentina-grapple-with-world-cup-villainy-amid-samuel-l-jackson-led-slant" target="_blank" rel="noopener">Al Jazeera · Argentina and the "villain" label</a></li>
+      <li><a href="https://buenosairesherald.com/society/black-community-in-argentina-responds-to-accusations-of-racism" target="_blank" rel="noopener">Buenos Aires Herald · Black Argentine response to Jackson's claim</a></li>
+    </ul>
+    <h4>Sentiment &amp; polling</h4>
+    <ul>
+      <li><a href="https://yougov.com/en-gb/articles/55220-lionel-messi-seen-more-negatively-following-2026-world-cup" target="_blank" rel="noopener">YouGov · Messi favorability before/after</a></li>
+      <li><a href="https://www.timeslive.co.za/sport/fifa-world-cup-2026/2026-07-21-poll-was-anti-lionel-messi-sentiment-at-the-world-cup-fair/" target="_blank" rel="noopener">TimesLIVE · "Was anti-Messi sentiment fair?"</a></li>
+    </ul>
+    <h4>Misinformation &amp; fact-checks</h4>
+    <ul>
+      <li><a href="https://www.euronews.com/my-europe/2026/07/16/fact-check-false-claims-target-french-referee-after-egypt-world-cup-exit" target="_blank" rel="noopener">Euronews · false claims against referee Letexier</a></li>
+      <li><a href="https://sundayguardianlive.com/sports/fact-check-is-cristiano-ronaldos-pr-team-behind-viral-anti-messi-social-media-campaign-amid-fifa-world-cup-2026-heres-the-truth-227646/" target="_blank" rel="noopener">Sunday Guardian · fact-check on the "Ronaldo PR team" claim</a></li>
+      <li><a href="https://www.naijanews.com/2026/07/22/2026-world-cup-afa-weighs-legal-action-alleged-anti-argentina-misinformation-campaign/" target="_blank" rel="noopener">Naija News · AFA weighs legal action</a></li>
+      <li><a href="https://cyabra.com/blog/decoding-world-cup-2026-conversations-authenticity-in-the-age-of-ai/" target="_blank" rel="noopener">Cyabra · inauthentic accounts in World Cup discourse</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Bar%C3%A7agate" target="_blank" rel="noopener">Wikipedia · Barçagate background</a></li>
+      <li><a href="https://www.newsguardtech.com/special-reports/ai-tracking-center/" target="_blank" rel="noopener">NewsGuard · AI Content Farm tracking center</a></li>
+    </ul>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  const svgNS = "http://www.w3.org/2000/svg";
+  const tooltip = document.getElementById('tooltip');
+  function tip(el, html){
+    el.addEventListener('mousemove', e=>{
+      tooltip.style.left = e.clientX+'px';
+      tooltip.style.top = (e.clientY-10)+'px';
+      tooltip.innerHTML = html;
+      tooltip.style.opacity = 1;
+    });
+    el.addEventListener('mouseleave', ()=>{ tooltip.style.opacity = 0; });
+  }
+  function el(tag, attrs){
+    const n = document.createElementNS(svgNS, tag);
+    for(const k in attrs) n.setAttribute(k, attrs[k]);
+    return n;
+  }
+  const cs = getComputedStyle(document.documentElement);
+  const V = name => cs.getPropertyValue(name).trim();
+
+  /* ---------- Favorability trend (3 real waves) ---------- */
+  (function(){
+    const points = [
+      {label:'Pre-tournament', sub:'mid-June', x:0.0, v:46},
+      {label:'Round of 16', sub:'~Jul 7', x:0.647, v:39},
+      {label:'Post-final', sub:'Jul 19', x:1.0, v:-15},
+    ];
+    const events = [
+      {label:'QF: Embolo red card', x:0.765},
+      {label:'SF: Falklands banner', x:0.882},
+    ];
+    const w = 720, top = 34, bottom = 56;
+    const h = 260;
+    const marginL = 46, marginR = 46;
+    const innerW = w - marginL - marginR;
+    const plotTop = top, plotBottom = h - bottom;
+    const yMin = -25, yMax = 50;
+    const X = f => marginL + f*innerW;
+    const Y = v => plotTop + (yMax - v) / (yMax - yMin) * (plotBottom - plotTop);
+
+    const svg = el('svg', {viewBox:`0 0 ${w} ${h}`, width:'100%', style:'max-width:720px;display:block;margin:0 auto;'});
+
+    svg.appendChild(el('line', {x1:marginL, x2:w-marginR, y1:Y(0), y2:Y(0), stroke:V('--axis'), 'stroke-width':1}));
+    const zt = el('text', {x:marginL-8, y:Y(0)+4, class:'axis-label', 'text-anchor':'end'});
+    zt.textContent = '0';
+    svg.appendChild(zt);
+
+    events.forEach(ev=>{
+      const xx = X(ev.x);
+      svg.appendChild(el('line', {x1:xx, x2:xx, y1:plotTop, y2:plotBottom, stroke:V('--grid'), 'stroke-width':1, 'stroke-dasharray':'3,3'}));
+      const lbl = el('text', {x:xx, y:plotTop-10, class:'axis-label', 'text-anchor':'middle'});
+      lbl.textContent = ev.label;
+      svg.appendChild(lbl);
+    });
+
+    let path = '';
+    points.forEach((p,i)=>{ path += (i===0?'M':'L') + X(p.x) + ' ' + Y(p.v) + ' '; });
+    svg.appendChild(el('path', {d:path.trim(), fill:'none', stroke:V('--red'), 'stroke-width':2.5}));
+
+    points.forEach(p=>{
+      const group = el('g', {class:'hover-target'});
+      group.appendChild(el('circle', {cx:X(p.x), cy:Y(p.v), r:7, fill:V('--red')}));
+      svg.appendChild(group);
+      const vl = el('text', {x:X(p.x), y:Y(p.v)-14, class:'value-label', 'text-anchor':'middle'});
+      vl.textContent = (p.v>0?'+':'')+p.v;
+      svg.appendChild(vl);
+      const anchor = p.x===0 ? 'start' : (p.x===1 ? 'end' : 'middle');
+      const nm = el('text', {x:X(p.x), y:plotBottom+22, class:'name-label', 'text-anchor':anchor});
+      nm.textContent = p.label;
+      svg.appendChild(nm);
+      const sub = el('text', {x:X(p.x), y:plotBottom+36, class:'axis-label', 'text-anchor':anchor});
+      sub.textContent = p.sub;
+      svg.appendChild(sub);
+      tip(group, `<b>${p.label}</b> (${p.sub})<br>Net favorable: ${p.v>0?'+':''}${p.v}`);
+    });
+
+    document.getElementById('chart-trend').appendChild(svg);
+  })();
+
+  /* ---------- Dumbbell chart ---------- */
+  (function(){
+    const data = [
+      {name:'Messi', before:55, after:29},
+      {name:'Ronaldo', before:41, after:34},
+      {name:'Tuchel (favorable)', before:37, after:37},
+      {name:'Kane', before:60, after:63},
+      {name:'Rashford', before:55, after:60},
+      {name:'Bellingham', before:48, after:67},
+    ];
+    const w = 720, rowH = 46, top = 16, bottom = 34;
+    const h = top + data.length*rowH + bottom;
+    const marginL = 130, marginR = 60;
+    const innerW = w - marginL - marginR;
+    const x = v => marginL + (v/100)*innerW;
+
+    const svg = el('svg', {viewBox:`0 0 ${w} ${h}`, width:'100%', style:'max-width:720px;display:block;margin:0 auto;'});
+
+    [0,20,40,60,80,100].forEach(v=>{
+      svg.appendChild(el('line', {x1:x(v),x2:x(v),y1:top,y2:h-bottom, stroke:V('--grid'), 'stroke-width':1}));
+      const t = el('text', {x:x(v), y:h-bottom+16, class:'axis-label', 'text-anchor':'middle'});
+      t.textContent = v+'%';
+      svg.appendChild(t);
+    });
+
+    data.forEach((d,i)=>{
+      const y = top + i*rowH + rowH/2;
+      const rising = d.after >= d.before;
+      const lineColor = rising ? V('--blue') : V('--red');
+      const group = el('g', {class:'hover-target'});
+      group.appendChild(el('line', {x1:x(d.before), x2:x(d.after), y1:y, y2:y, stroke:lineColor, 'stroke-width':3, 'stroke-linecap':'round'}));
+      group.appendChild(el('circle', {cx:x(d.before), cy:y, r:6, fill:V('--surface'), stroke:V('--muted'), 'stroke-width':2}));
+      group.appendChild(el('circle', {cx:x(d.after), cy:y, r:6, fill:lineColor}));
+      const nm = el('text', {x:8, y:y+4, class:'name-label'});
+      nm.textContent = d.name;
+      svg.appendChild(nm);
+      const delta = d.after - d.before;
+      const dl = el('text', {x: x(Math.max(d.before,d.after))+14, y:y+4, class:'value-label', fill: rising?V('--blue'):V('--red')});
+      dl.textContent = (delta>0?'+':'') + delta;
+      svg.appendChild(dl);
+      svg.appendChild(group);
+      tip(group, `<b>${d.name}</b><br>Before: ${d.before}% favorable<br>After: ${d.after}% favorable<br>Change: ${delta>0?'+':''}${delta}pp`);
+    });
+
+    const legend = document.createElement('div');
+    legend.className = 'legend';
+    legend.innerHTML = `<span class="sw"><i style="background:${V('--muted')};border-radius:50%;"></i>Before</span>
+      <span class="sw"><i style="background:${V('--blue')};border-radius:50%;"></i>After (rose)</span>
+      <span class="sw"><i style="background:${V('--red')};border-radius:50%;"></i>After (fell)</span>`;
+    const host = document.getElementById('chart-dumbbell');
+    host.appendChild(legend);
+    host.appendChild(svg);
+  })();
+
+  /* ---------- VAR diverging bar ---------- */
+  (function(){
+    const data = [
+      {name:'Mexico', v:7.8},
+      {name:'Argentina', v:6.7},
+      {name:'Qatar', v:-5.1},
+      {name:'Iran', v:-5.4},
+      {name:'Croatia', v:-6.5},
+    ];
+    const w = 720, rowH = 40, top=10, bottom=30;
+    const h = top + data.length*rowH + bottom;
+    const marginL = 100, marginR = 100;
+    const innerW = w - marginL - marginR;
+    const maxAbs = 8;
+    const cx = marginL + innerW/2;
+    const scale = (innerW/2)/maxAbs;
+    const x = v => cx + v*scale;
+
+    const svg = el('svg', {viewBox:`0 0 ${w} ${h}`, width:'100%', style:'max-width:720px;display:block;margin:0 auto;'});
+    svg.appendChild(el('line', {x1:cx,x2:cx,y1:top,y2:h-bottom, stroke:V('--axis'), 'stroke-width':1.5}));
+    [-8,-4,0,4,8].forEach(v=>{
+      const t = el('text', {x:x(v), y:h-bottom+16, class:'axis-label', 'text-anchor':'middle'});
+      t.textContent = (v>0?'+':'')+v;
+      svg.appendChild(t);
+    });
+
+    data.forEach((d,i)=>{
+      const y = top + i*rowH + 8;
+      const barH = 20;
+      const color = d.v >= 0 ? V('--blue') : V('--red');
+      const bx = d.v >= 0 ? cx : x(d.v);
+      const bw = Math.abs(x(d.v) - cx);
+      const group = el('g', {class:'hover-target'});
+      const rect = el('rect', {x:bx, y, width:Math.max(bw,2), height:barH, rx:3, fill:color});
+      group.appendChild(rect);
+      const nm = el('text', {x:marginL-10, y:y+barH/2+4, class:'name-label', 'text-anchor':'end'});
+      nm.textContent = d.name;
+      svg.appendChild(nm);
+      const lbl = el('text', {
+        x: d.v>=0 ? x(d.v)+8 : x(d.v)-8,
+        y: y+barH/2+4, class:'value-label',
+        'text-anchor': d.v>=0 ? 'start':'end', fill:color
+      });
+      lbl.textContent = (d.v>0?'+':'')+d.v;
+      svg.appendChild(group);
+      svg.appendChild(lbl);
+      const note = d.name==='Mexico' ? '<br>No known complaints about these calls' : (d.name==='Argentina' ? '<br>Tied to several disputed incidents (see table below)' : '');
+      tip(group, `<b>${d.name}</b><br>Net VAR rate: ${d.v>0?'+':''}${d.v} per 100 fouls<br>${d.v>=0?'Net beneficiary':'Net penalized'}${note}`);
+    });
+
+    const legend = document.createElement('div');
+    legend.className = 'legend';
+    legend.innerHTML = `<span class="sw"><i style="background:${V('--blue')};"></i>Net favorable</span>
+      <span class="sw"><i style="background:${V('--red')};"></i>Net unfavorable</span>`;
+    const host = document.getElementById('chart-var');
+    host.appendChild(legend);
+    host.appendChild(svg);
+  })();
+
+  /* ---------- Fouls-per-card emphasis bar ---------- */
+  (function(){
+    const data = [
+      {name:'England', v:7},
+      {name:'Morocco', v:9.8},
+      {name:'Belgium', v:10},
+      {name:'Switzerland', v:11.5},
+      {name:'France', v:12.2},
+      {name:'Norway', v:13.6},
+      {name:'Spain', v:17.5},
+      {name:'Argentina', v:22, emph:true},
+    ];
+    const w = 720, rowH = 34, top=10, bottom=28;
+    const h = top + data.length*rowH + bottom;
+    const marginL = 160, marginR = 50;
+    const innerW = w - marginL - marginR;
+    const max = 24;
+    const x = v => marginL + (v/max)*innerW;
+
+    const svg = el('svg', {viewBox:`0 0 ${w} ${h}`, width:'100%', style:'max-width:720px;display:block;margin:0 auto;'});
+    [0,6,12,18,24].forEach(v=>{
+      svg.appendChild(el('line', {x1:x(v),x2:x(v),y1:top,y2:h-bottom, stroke:V('--grid'), 'stroke-width':1}));
+      const t = el('text', {x:x(v), y:h-bottom+16, class:'axis-label', 'text-anchor':'middle'});
+      t.textContent = v;
+      svg.appendChild(t);
+    });
+
+    data.forEach((d,i)=>{
+      const y = top + i*rowH + 6;
+      const barH = 18;
+      const group = el('g', {class:'hover-target'});
+      const rect = el('rect', {x:marginL, y, width:Math.max(x(d.v)-marginL,2), height:barH, rx:3,
+        class: d.emph ? 'bar-emph' : 'bar-context'});
+      group.appendChild(rect);
+      const nm = el('text', {x:marginL-10, y:y+barH/2+4, class:'name-label', 'text-anchor':'end',
+        fill: d.emph ? V('--accent') : V('--ink-2'), 'font-weight': d.emph ? 700 : 400});
+      nm.textContent = d.name;
+      svg.appendChild(nm);
+      const lbl = el('text', {x:x(d.v)+8, y:y+barH/2+4, class:'value-label'});
+      lbl.textContent = d.v;
+      svg.appendChild(group);
+      svg.appendChild(lbl);
+      tip(group, `<b>${d.name}</b><br>1 yellow card every ${d.v} fouls`);
+    });
+
+    document.getElementById('chart-fouls').appendChild(svg);
+  })();
+})();
+</script>
